@@ -21,7 +21,14 @@
 </head>
 
 <body>
-    @yield('content')
+    <div class="py-5 px-3">
+        <div class="main-container d-flex">
+            <div class="d-flex col w-100 purple darken-4 justify-content-center logo-wrapper">
+                <img class="responsive-img w-75" src="{{ asset('images/logo.svg') }}" alt="super fit logo">
+            </div>
+            @yield('content')
+        </div>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous">
     </script>

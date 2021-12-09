@@ -1,57 +1,74 @@
-<x-guest-layout>
-    <x-auth-card>
-        <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
-        </x-slot>
+@extends('layouts.auth')
 
-        <!-- Validation Errors -->
-        <x-auth-validation-errors class="mb-4" :errors="$errors" />
+@section('title', 'Register')
 
-        <form method="POST" action="{{ route('register') }}">
-            @csrf
-
-            <!-- Name -->
-            <div>
-                <x-label for="name" :value="__('Name')" />
-
-                <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required
-                    autofocus />
+@section('content')
+    <div class="col w-100 p-5 align-self-center">
+        <h1 class="display-3">Cadastro</h1>
+        <form class="row g-3" method="POST" action="{{ route('register') }}">
+            <div class="input-field w-100">
+                <label for="email">Email</label>
+                <input type="email" required name="email" class="validate" id="email">
             </div>
-
-            <!-- Email Address -->
-            <div class="mt-4">
-                <x-label for="email" :value="__('Email')" />
-
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
+            <div class="input-field w-100">
+                <label for="password">Senha</label>
+                <input type="password" required name="password" class="validate" id="password">
             </div>
-
-            <!-- Password -->
-            <div class="mt-4">
-                <x-label for="password" :value="__('Password')" />
-
-                <x-input id="password" class="block mt-1 w-full" type="password" name="password" required
-                    autocomplete="new-password" />
+            <div class="input-field w-100">
+                <label for="confirm-password">Confirmar Senha</label>
+                <input type="password" required class="confirmPassword" class="validate" id="confirm-password">
             </div>
-
-            <!-- Confirm Password -->
-            <div class="mt-4">
-                <x-label for="password_confirmation" :value="__('Confirm Password')" />
-
-                <x-input id="password_confirmation" class="block mt-1 w-full" type="password"
-                    name="password_confirmation" required />
+            <div class="input-field col-12 w-100">
+                <label for="name">Nome</label>
+                <input type="text" required name="name" id="name">
             </div>
-
-            <div class="flex items-center justify-end mt-4">
-                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
-                    {{ __('Already registered?') }}
-                </a>
-
-                <x-button class="ml-4">
-                    {{ __('Register') }}
-                </x-button>
+            <div class="col-12 w-100">
+                <label for="brith-date">Data de nascimento</label>
+                <input type="date" required name="birthDate" class="validate" id="brith-date">
+            </div>
+            <div class="col-12">
+                <label for="inputZip">Gênero</label>
+                <p>
+                    <input class="with-gap" required name="gender" type="radio" id="m" />
+                    <label value="Masculino" for="m">Masculino</label>
+                </p>
+                <p>
+                    <input class="with-gap" required name="gender" type="radio" id="f" />
+                    <label value="Feminino" for="f">Feminino</label>
+                </p>
+                <p>
+                    <input class="with-gap" required name="gender" type="radio" id="other" />
+                    <label value="" for="other">Outro</label>
+                </p>
+            </div>
+            <div class="col-12">
+                <label for="inputZip">Tipo físico</label>
+                <p>
+                    <input class="with-gap" required name="physics" type="radio" id="ectomorph" />
+                    <label value="Endomorfo" for="ectomorph">Endomorfo</label>
+                </p>
+                <p>
+                    <input class="with-gap" required name="physics" type="radio" id="mesomorph" />
+                    <label value="Mesomorfo" for="mesomorph">Mesomorfo</label>
+                </p>
+                <p>
+                    <input class="with-gap" required name="physics" type="radio" id="endomorph" />
+                    <label value="Ectomorfo" for="endomorph">Ectomorfo</label>
+                </p>
+            </div>
+            <div class="input-field col w-50">
+                <label for="heigth">Altura</label>
+                <input type="number" required step="0.01" name="heigth" id="heigth">
+            </div>
+            <div class="input-field col w-50">
+                <label for="wheight">Peso</label>
+                <input type="number" required step="0.01" name="wheight" id="wheight">
+            </div>
+            <p class="lead">Já faz parte da nossa família ? <a href="./login">faça o login</a>, e vamos
+                voltar ao trabalho!</p>
+            <div class="col-12">
+                <button type="submit" class="waves-effect waves-light btn-large w-100 purple darken-4">Cadastrar-se</button>
             </div>
         </form>
-    </x-auth-card>
-</x-guest-layout>
+    </div>
+@endsection

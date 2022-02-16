@@ -6,6 +6,7 @@
     <div class="col xl container p-5">
         <h1 class="display-3">Login</h1>
         <form class="row g-3" action="{{ route('login') }}" method="POST">
+            @csrf
             <div class="input-field w-100">
                 <label for="inputEmail4" class="form-label">Email</label>
                 <input type="email" name="email" class="form-control" id="inputEmail4">

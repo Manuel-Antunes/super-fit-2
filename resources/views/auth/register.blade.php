@@ -6,6 +6,7 @@
     <div class="col w-100 p-5 align-self-center">
         <h1 class="display-3">Cadastro</h1>
         <form class="row g-3" method="POST" action="{{ route('register') }}">
+            @csrf
             <div class="input-field w-100">
                 <label for="email">Email</label>
                 <input type="email" required name="email" class="validate" id="email">

@@ -1,15 +1,15 @@
 version: "2.0"
 services:
-  db:
-    image: mysql:5.7
-    container_name: mysql
-    restart: always
-    volumes:
-      - ./app/data/migrations:/db
-    ports:
-      - 3306:${DB_PORT}
-    environment:
-      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
-      MYSQL_DATABASE: ${DB_DATABASE}
-      MYSQL_USER: ${DB_USER}
-      MYSQL_PASSWORD: ${DB_PASSWORD}
+    db:
+        image: mysql:5.7
+        container_name: mysql
+        restart: always
+        volumes:
+            - ./app/data/migrations:/db
+        ports:
+            - 3306:${DB_PORT}
+        environment:
+            MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+            MYSQL_DATABASE: ${DB_DATABASE}
+            MYSQL_USER: ${DB_USERNAME}
+            MYSQL_PASSWORD: ${DB_PASSWORD}

@@ -20,10 +20,12 @@
                 </a>
             @endforeach
         </div>
-        <button id="fab-exercice" data-target="exercice-creation-modal"
-            class="btn-floating purple darken-4 fab fixed-bottom btn-large waves-effect waves-light modal-trigger">
-            <i class="material-icons">add</i>
-        </button>
+        @if (Auth::user()->personal)
+            <button id="fab-exercice" data-target="exercice-creation-modal"
+                class="btn-floating purple darken-4 fab fixed-bottom btn-large waves-effect waves-light modal-trigger">
+                <i class="material-icons">add</i>
+            </button>
+        @endif
         <x-exercise-creation-modal />
     </div>
 @endsection

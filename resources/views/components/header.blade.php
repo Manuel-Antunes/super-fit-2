@@ -10,7 +10,7 @@
         </span>
         <img style="min-width: 40px;"
             src="{{ Auth::user()->photo? Auth::user()->photo: 'https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png' }}"
-            alt="" class="circle w-25">
+            alt="" class="circle w-25 ml-2">
         <!-- notice the "circle" class -->
     </div>
 </div>

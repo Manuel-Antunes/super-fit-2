@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ExercisesController;
+use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,5 +24,6 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 Route::resource('exercises', ExercisesController::class)->middleware(['auth']);
+Route::get('/users', [UsersController::class, 'index'])->middleware(['auth']);
 
 require __DIR__ . '/auth.php';

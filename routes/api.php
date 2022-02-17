@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\MediaController;
+use App\Http\Controllers\UsersController;
+use App\Http\Controllers\UsersDatatableController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -19,3 +21,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 Route::post('/media', [MediaController::class, 'store']);
+Route::get('/users/datatable', [UsersDatatableController::class, 'index']);

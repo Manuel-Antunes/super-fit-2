@@ -7,10 +7,6 @@
         "laravel"
     ],
     "license": "MIT",
-    "post-install-cmd": [
-        "php artisan clear-compiled",
-        "chmod -R 777 public/"
-    ],
     "require": {
         "php": "^7.3|^8.0",
         "fruitcake/laravel-cors": "^2.0",

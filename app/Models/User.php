@@ -24,7 +24,8 @@ class User extends Authenticatable
         'wheight',
         'birthDate',
         'physics',
-        'gender'
+        'gender',
+        'personal'
     ];
 
     /**

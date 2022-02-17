@@ -1,6 +1,3 @@
-@section('aditional-styles')
-    <link rel="stylesheet" href="{{ asset('aditional-styles') }}">
-@endsection
 <div class="purple darken-4 w-100 align-items-center d-flex justify-content-between p-1 z-depth-4">
     <a href="./" class="w-50">
         <div class="logo-wrapper  container-fluid">
@@ -11,7 +8,9 @@
         <span class="m-1 fw-bold text-white">
             {{ Auth::user()->name }}
         </span>
-        <img style="min-width: 40px;" src="{{ Auth::user()->photo }}" alt="" class="circle w-25">
+        <img style="min-width: 40px;"
+            src="{{ Auth::user()->photo? Auth::user()->photo: 'https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png' }}"
+            alt="" class="circle w-25">
         <!-- notice the "circle" class -->
     </div>
 </div>
@@ -22,7 +21,8 @@
                 <img
                     src="https://i2.wp.com/thevocalink.com/wp-content/uploads/2021/04/How-to-Start-a-Gym-or-a-Fitness-Center.jpg?fit=696%2C442&ssl=1">
             </div>
-            <a href="#!user"><img class="circle" src="{{ Auth::user()->photo }}"></a>
+            <a href="#!user"><img class="circle"
+                    src="{{ Auth::user()->photo? Auth::user()->photo: 'https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png' }}"></a>
             <a href="#!name"><span class="white-text name">{{ Auth::user()->name }}</span></a>
             <a href="#!email"><span class="white-text email">{{ Auth::user()->email }}</span></a>
         </div>
@@ -31,6 +31,14 @@
     <li>
         <div class="divider"></div>
     </li>
-    <li><a class="waves-effect" href="./signout"><i class="material-icons">logout</i>Logout</a></li>
+    <li>
+        <a href="" class="waves-effect position-relative">
+            <form class="w-100 position-absolute h-100 top-0 start-0 opacity-0" action="/logout" method="POST">
+                @csrf
+                <button type="submit" class="border-none w-100 h-100"></button>
+            </form>
+            <i class="material-icons">logout</i>Logout
+        </a>
+    </li>
 </ul>
-<script src="js/header.js"></script>
+<script src="/js/components/header.js"></script>

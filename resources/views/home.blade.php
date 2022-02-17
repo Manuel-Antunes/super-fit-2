@@ -2,6 +2,10 @@
 
 @section('title', 'Home')
 
+@section('aditional-styles')
+    <link rel="stylesheet" href="css/pages/home.css">
+@endsection
+
 @section('content')
     <div class="main-container px-5 pt-5 d-flex flex-column">
         <div class="main-menu">

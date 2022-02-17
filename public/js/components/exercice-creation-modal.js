@@ -50,17 +50,27 @@ form.addEventListener("submit", function (e) {
     }
     // AJAX request
     $.ajax({
-        url: "./media",
+        url: "/api/media",
         type: "post",
         data: form_data,
         dataType: "json",
         contentType: false,
         processData: false,
-        success: function () {
+        success: function (data) {
+            const input = document.createElement("input");
+            input.value = data.map((f) => f.id);
+            input.name = "media[]";
+            input.type = "hidden";
+            form.appendChild(input);
             form.submit();
         },
         error: function (response) {
-            alert("Error while uploading files");
+            Swal.fire({
+                title: "Oops!",
+                text: "Erro ao enviar os arquivos",
+                icon: "error",
+                confirmButtonText: "continuar",
+            });
         },
     });
 });

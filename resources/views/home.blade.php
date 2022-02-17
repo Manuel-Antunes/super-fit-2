@@ -18,7 +18,7 @@
             <a href="/manage-clients" class="waves-effect waves-light btn-large" id="manage-clients">
                 <h5>Gerenciar Clientes</h5>
             </a>
-            <a href="/manage-exercises" class="waves-effect waves-light btn-large" id="manage-exercices">
+            <a href="/exercises" class="waves-effect waves-light btn-large" id="manage-exercices">
                 <h5>Gerenciar Exercicios</h5>
             </a>
         </div>

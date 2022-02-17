@@ -12,6 +12,9 @@ class MediaController extends Controller
         $uploaded = [];
 
         $files = $request->allFiles();
+        if (sizeof($files) == 0) {
+            return $uploaded;
+        }
         foreach ($files['files'] as $file) {
             $nameFile = null;
             $name = uniqid(date('HisYmd'));

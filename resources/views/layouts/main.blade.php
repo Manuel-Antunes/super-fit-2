@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     @yield('aditional-styles')
+    <script src="{{ asset('js/app.js') }}" defer></script>
     <title>
         Super-Fit - @yield('title')
     </title>

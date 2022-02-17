@@ -17,7 +17,8 @@
             </div>
             <div class="input-field w-100">
                 <label for="confirm-password">Confirmar Senha</label>
-                <input type="password" required class="confirmPassword" class="validate" id="confirm-password">
+                <input type="password" name="password_confirmation" required class="confirmPassword" class="validate"
+                    id="confirm-password">
             </div>
             <div class="input-field col-12 w-100">
                 <label for="name">Nome</label>
@@ -30,30 +31,30 @@
             <div class="col-12">
                 <label for="inputZip">Gênero</label>
                 <p>
-                    <input class="with-gap" required name="gender" type="radio" id="m" />
+                    <input class="with-gap" required name="gender" value="m" type="radio" id="m" />
                     <label value="Masculino" for="m">Masculino</label>
                 </p>
                 <p>
-                    <input class="with-gap" required name="gender" type="radio" id="f" />
+                    <input class="with-gap" value="f" required name="gender" type="radio" id="f" />
                     <label value="Feminino" for="f">Feminino</label>
                 </p>
                 <p>
-                    <input class="with-gap" required name="gender" type="radio" id="other" />
+                    <input class="with-gap" required name="gender" value="o" type="radio" id="other" />
                     <label value="" for="other">Outro</label>
                 </p>
             </div>
             <div class="col-12">
                 <label for="inputZip">Tipo físico</label>
                 <p>
-                    <input class="with-gap" required name="physics" type="radio" id="ectomorph" />
+                    <input class="with-gap" required name="physics" type="radio" id="ectomorph" value="ectomorph" />
                     <label value="Endomorfo" for="ectomorph">Endomorfo</label>
                 </p>
                 <p>
-                    <input class="with-gap" required name="physics" type="radio" id="mesomorph" />
+                    <input class="with-gap" required name="physics" type="radio" id="mesomorph" value="mesomorph" />
                     <label value="Mesomorfo" for="mesomorph">Mesomorfo</label>
                 </p>
                 <p>
-                    <input class="with-gap" required name="physics" type="radio" id="endomorph" />
+                    <input class="with-gap" required name="physics" type="radio" id="endomorph" value="endomorph" />
                     <label value="Ectomorfo" for="endomorph">Ectomorfo</label>
                 </p>
             </div>

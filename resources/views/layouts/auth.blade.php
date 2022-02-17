@@ -21,7 +21,9 @@
 </head>
 
 <body>
+
     <div class="py-5 px-3">
+        <x-flash-messages />
         <div class="main-container d-flex">
             <div class="d-flex col w-100 purple darken-4 justify-content-center logo-wrapper">
                 <img class="responsive-img w-75" src="{{ asset('images/logo.svg') }}" alt="super fit logo">

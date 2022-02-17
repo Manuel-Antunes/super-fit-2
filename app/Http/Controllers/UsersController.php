@@ -9,7 +9,9 @@ class UsersController extends Controller
 {
     public function index()
     {
-        $users = User::all();
-        return view('user.index', ['users' => $users]);
+        $malesCount = User::query()->where("gender", "m")->count();
+        $femalesCount = User::query()->where("gender", "f")->count();
+        $othersCount = User::query()->where("gender", "o")->count();
+        return view('user.index', ['malesCount' => $malesCount, 'femalesCount' => $femalesCount, 'othersCount' => $othersCount]);
     }
 }

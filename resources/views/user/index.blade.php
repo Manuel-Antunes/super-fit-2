@@ -42,6 +42,11 @@
 @endsection
 
 @section('aditional-scripts')
+    <script>
+        var malesCount = {!! json_encode($malesCount) !!};
+        var femalesCount = {!! json_encode($femalesCount) !!};
+        var othersCount = {!! json_encode($othersCount) !!};
+    </script>
     <script src="{{ asset('chart.js/chart.js') }}"></script>
     <script src="{{ asset('datatables.net-dt/dataTables.dataTables.min.js') }}"></script>
     <script src="js/pages/users.js"></script>

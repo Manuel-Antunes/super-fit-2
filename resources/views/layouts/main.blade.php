@@ -22,10 +22,10 @@
 </head>
 
 <body>
-    <x-header />
     <div class="min-vh-100 position-relative">
+        <x-header />
         @yield('content')
-        <div class="m-4"></div>
+        <div class="pt-5"></div>
         <x-footer />
         <x-flash-messages />
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"

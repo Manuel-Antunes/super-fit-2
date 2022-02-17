@@ -15,7 +15,7 @@ const data = {
                 "rgb(54, 162, 235)",
                 "rgb(255, 205, 86)",
             ],
-            data: [10, 10, 2],
+            data: [malesCount, femalesCount, othersCount],
             hoverOffset: 4,
         },
     ],

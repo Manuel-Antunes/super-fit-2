@@ -2,7 +2,11 @@
 @section('title', 'Usuários')
 @section('content')
     <div class="container-fluid">
-
+        <div class="row">
+            <div class="col">
+                <canvas id="trains-relation"></canvas>
+            </div>
+        </div>
         <button id="fab-exercice" data-target="exercice-creation-modal"
             class="btn-floating purple darken-4 fab fixed-bottom btn-large waves-effect waves-light modal-trigger">
             <i class="material-icons">add</i>
@@ -20,4 +24,12 @@
         }
 
     </style>
+@endsection
+@section('aditional-scripts')
+    <script>
+        var trainsByEndDate = {!! json_encode($trainsByEndDate) !!}
+        var trainsByStartDate = {!! json_encode($trainsByStartDate) !!}
+    </script>
+    <script src="{{ asset('chart.js/chart.js') }}"></script>
+    <script src="js/pages/train.js"></script>
 @endsection

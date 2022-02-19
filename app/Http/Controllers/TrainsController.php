@@ -23,6 +23,12 @@ class TrainsController extends Controller
 
     public function index()
     {
-        return view('train.index');
+        $trainsByStartDate = [];
+        $trainsByEndDate = [];
+        for ($i = 1; $i <= 12; $i++) {
+            $trainsByStartDate[] = Train::query()->whereMonth("start_date", "=", str_pad($i, 2, 0, STR_PAD_LEFT))->count();
+            $trainsByEndDate[] = Train::query()->whereMonth("end_date", "=", str_pad($i, 2, 0, STR_PAD_LEFT))->count();
+        }
+        return view('train.index', ['trainsByStartDate' => $trainsByStartDate, 'trainsByEndDate' => $trainsByEndDate]);
     }
 }

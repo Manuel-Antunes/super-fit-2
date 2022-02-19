@@ -12,6 +12,8 @@ class Train extends Model
         'personal_id',
         'client_id',
         'date',
+        'start_date',
+        'end_date'
     ];
 
     public function personal()

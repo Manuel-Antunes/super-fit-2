@@ -9,7 +9,7 @@
 @section('content')
     <div class="main-container px-5 pt-5 d-flex flex-column ">
         <div class="main-menu">
-            <a href="/manage-trains" class="waves-effect waves-light btn-large" id="manage-trains">
+            <a href="/trains" class="waves-effect waves-light btn-large" id="manage-trains">
                 <h5>Gerenciar Treinos</h5>
             </a>
             <a href="/manage-evaluations" class="waves-effect waves-light btn-large" id="manage-evaluations">

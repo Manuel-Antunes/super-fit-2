@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ExercisesController;
+use App\Http\Controllers\TrainsController;
 use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 
@@ -25,5 +26,6 @@ Route::get('/dashboard', function () {
 
 Route::resource('exercises', ExercisesController::class)->middleware(['auth']);
 Route::get('/users', [UsersController::class, 'index'])->middleware(['auth']);
+Route::resource('trains', TrainsController::class)->middleware(['auth']);
 
 require __DIR__ . '/auth.php';

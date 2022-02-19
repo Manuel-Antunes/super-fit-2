@@ -7,7 +7,7 @@
         <h1 class="display-3">Cadastro</h1>
         <form class="row g-3" method="POST" action="{{ route('register') }}">
             @csrf
-            <div class="input-field w-100">
+            <div class="input-field w-100 mb-2">
                 <label for="email">Email</label>
                 <input type="email" required name="email" class="validate" id="email">
             </div>
@@ -26,7 +26,7 @@
             </div>
             <div class="col-12 w-100">
                 <label for="brith-date">Data de nascimento</label>
-                <input type="date" required name="birthDate" class="validate" id="brith-date">
+                <input type="date" required name="birth_date" class="validate" id="brith-date">
             </div>
             <div class="col-12">
                 <label for="inputZip">Gênero</label>

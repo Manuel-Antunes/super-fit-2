@@ -1,34 +1,64 @@
-const labels = ["Masculino", "Feminino", "Outro"];
-
-// item: ChartItem, config: ChartConfiguration<TType, TData, TLabel>
-
 /**
- * @type import('chart.js').ChartData
+ * @type import('chart.js').ChartConfiguration
  */
-const data = {
-    labels: labels,
-    datasets: [
-        {
-            label: "Relação de gênero",
-            backgroundColor: [
-                "rgb(255, 99, 132)",
-                "rgb(54, 162, 235)",
-                "rgb(255, 205, 86)",
-            ],
-            data: [malesCount, femalesCount, othersCount],
-            hoverOffset: 4,
-        },
-    ],
+const userChartConfig = {
+    type: "pie",
+    data: {
+        labels: ["Masculino", "Feminino", "Outro"],
+        datasets: [
+            {
+                label: "Relação de gênero",
+                backgroundColor: [
+                    "rgb(255, 99, 132)",
+                    "rgb(54, 162, 235)",
+                    "rgb(255, 205, 86)",
+                ],
+                data: [malesCount, femalesCount, othersCount],
+                hoverOffset: 4,
+            },
+        ],
+    },
+    options: {
+        responsive: true,
+    },
 };
 
 /**
  * @type import('chart.js').ChartConfiguration
  */
-const config = {
-    type: "pie",
-    data: data,
+const annivesaryChartConfig = {
+    type: "bar",
+    data: {
+        labels: [
+            "Janeiro",
+            "Fevereiro",
+            "Março",
+            "Abril",
+            "Maio",
+            "Junho",
+            "Julho",
+            "Agosto",
+            "Setembro",
+            "Outubro",
+            "Novembro",
+            "Dezembro",
+        ],
+        datasets: [
+            {
+                label: "Aniversarios do ano",
+                data: monthAnniversariants,
+                backgroundColor: "#7159c1",
+                borderColor: "#191920",
+                borderWidth: 1,
+            },
+        ],
+    },
     options: {
-        responsive: true,
+        scales: {
+            y: {
+                beginAtZero: true,
+            },
+        },
     },
 };
 
@@ -51,7 +81,7 @@ const usersDataTable = (function () {
             columns: [
                 { data: "name" },
                 { data: "gender" },
-                { data: "birthDate" },
+                { data: "birth_date" },
                 { data: "id" },
                 { data: "id" },
             ],
@@ -89,7 +119,14 @@ const usersDataTable = (function () {
 /**
  * @type import('chart.js').Chart
  */
-const myChart = new Chart(document.getElementById("users-chart"), config);
+new Chart(document.getElementById("users-chart"), userChartConfig);
+/**
+ * @type import('chart.js').Chart
+ */
+new Chart(
+    document.getElementById("users-anniversary-chart"),
+    annivesaryChartConfig
+);
 
 $(function () {
     usersDataTable.init({}, "#user-table");

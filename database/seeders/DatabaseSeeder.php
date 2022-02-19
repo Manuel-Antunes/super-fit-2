@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'root@root.com',
             'password' => Hash::make('toor1234'),
             'wheight' => '70',
-            'birth_date' => '26/12/2002',
+            'birth_date' => '26-12-2002',
             'physics' => 'mesomorph',
             'gender' => 'm',
             'personal' => true
